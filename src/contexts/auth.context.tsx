@@ -26,7 +26,6 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState<User | null>(null);
 
-
   useEffect(() => {
     const token = localStorage.getItem('token');
 
@@ -56,5 +55,4 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   }, [router]);
 
   return <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn, handleLogin, user }}>{children}</AuthContext.Provider>
-
 };
